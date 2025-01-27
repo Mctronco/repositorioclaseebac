@@ -22,26 +22,35 @@ public class HolaMundo : MonoBehaviour
     {
         //x = x + 1;
         //Debug.Log(x);
+        print("Hola desde Update");
 
         Debug.Log("Hola desde Update");
     }
     private void FixedUpdate()
     {
+        print("Hola desde Fixed Update cada 50 frames");
+
         Debug.LogWarning("Hola desde Fixed Update cada 50 frames");
     }
 
     private void LateUpdate()
     {
+        print("Hola desde Late Update");
+        
         Debug.Log("Hola desde Late Update");
     }
 
     private void OnEnable()
     {
+        print("El objeto a sido habilitado");
+
         Debug.LogWarning("El objeto a sido habilitado");
     }
 
     private void OnDisable()
     {
+        print("El objeto ha sido inhabilitado");
+        
         Debug.LogWarning("El objeto ha sido inhabilitado");
     }
 }
