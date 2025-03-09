@@ -46,14 +46,22 @@ public class CuboNuevo : MonoBehaviour
             {
                 objetosParaEliminar.Add(go);
             }
+    
+        }
+        foreach (GameObject go in objetosParaEliminar)
+        {
+            listaDeCubos.Remove(go);
+            Destroy(go);
         }
     }
+
     private void FixedUpdate()
     {
         GameObject tempGameObjet = Instantiate<GameObject>(PrefabCubo);
         tempGameObjet.name = "CuboNumero" + numCubos;
         Color c = new Color(Random.value, Random.value, Random.value);
         tempGameObjet.GetComponent<MeshRenderer>().material.color = c;
+       
     }
     private void OnEnable()
     {
