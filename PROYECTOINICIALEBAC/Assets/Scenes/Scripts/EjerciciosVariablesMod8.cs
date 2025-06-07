@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EjerciciosVariablesMod8 : MonoBehaviour
@@ -12,6 +13,7 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
     uint miIntSinSigno = 0;
     long miLong = long.MaxValue;
     ulong miLongSinSigno = 0;
+    public string CambioColor;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +32,7 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         d = 1;
         f = a / b;
         Debug.Log(f);
+        
         miInt = Random.RandomRange(c, d);
         string miPar = "Par";
         string miNon = "Non";
@@ -37,8 +40,40 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         string miNegro = "Negro";
         string non = $"El numero es: {miPar} Y su color es {miBlanco}";
         string par = $"El numero es: {miNon} Y su color es {miNegro}";
+        
+
+        if (miInt % 2 == 0)
+        {
+            GetComponent<MeshRenderer>().material.color = Color.white;
+            Debug.Log("el numero" + miInt + "es par");
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material.color = Color.black;
+            Debug.Log("el numero" + miInt + "es non");
+        }
+
+        
+
+        switch (CambioColor)
+        {
+            case "blanco":
+                
+                Debug.Log("El color es blanco");
+                GetComponent<MeshRenderer>().material.color = Color.white;
+                break;
+            case "negro":
+                
+                Debug.Log("el color es negro");
+                GetComponent<MeshRenderer>().material.color = Color.black;
+                break;
+        }
+
+
+
+
+
         char e = '6';
-       
         int valorEntero = 0;
         if (!int.TryParse(e.ToString(), out valorEntero))
         {
@@ -46,27 +81,50 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         }
         Debug.Log(valorEntero);
 
-        float g = 8.14558f;
+        char j = '9';
+        int valorEntero2 = 0;
+        if (int.TryParse(j.ToString(),out valorEntero2))
+        {
+            Debug.LogError("ese no es un tipo de valor valido");
+        }
+        Debug.Log(valorEntero2);
+
+        int k;
+        k = valorEntero * valorEntero2;
+        Debug.Log(k);
+
         
-        Debug.Log(g.ToString());
+        float g = 8.14558f;
+
+        Debug.Log(g.ToString("F4"));
 
 
 
 
-        h = e;
-        Debug.Log(h);
+        string miString = "Hola a mi Tutor";
+        char[] delimitador = { ' '};
+        string[] espacios = miString.Split(delimitador);
+        int i;
+        for (i=0;i < espacios.Length; i++)
+        {
+            Debug.Log(espacios[i]);
+        }
 
 
-        char miChatacterUno;
-        char miChatacterDos;
-        char miCharacterTres;
-        string miString  = "Hola a mi Tutor";
-        miChatacterUno = miString[0];
-        Debug.Log(miChatacterUno);
-        miChatacterDos = miString[5];
-        Debug.Log(miChatacterDos);
-        miCharacterTres = miString[10];
-        Debug.Log(miCharacterTres);
+        
+        string fraseEnPar = "Esta frase se separa en par";
+        
+
+        for(i = 0; i <fraseEnPar.Length; i++)
+        {
+                if (i % 2 == 0)
+            {
+                Debug.Log(fraseEnPar[i] + "");
+            }
+        }
+        
+
+
 
         string miNombreCompleto = "Fernando Castellanos Lopez";
         string miNombre = miNombreCompleto.Substring(0, 8);
@@ -79,27 +137,15 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         string miQuienes = miFrase.Substring(5, 6);
         Debug.Log(miQuienes);
 
-        if (miInt %2 == 0)
-        {
-            GetComponent<MeshRenderer>().material.color = Color.white;
-            Debug.Log("el numero" + miInt + "es par");
-            Debug.Log(non);
-
-
-        }
-        else
-        {
-            GetComponent<MeshRenderer>().material.color = Color.black;
-            Debug.Log("el numero" + miInt + "es non");
-            Debug.Log(par);
-        }
+        
 
 
         miShort += 3;
         Debug.Log(miShort);
 
-        
+       
 
+        
 
 
     }
