@@ -32,7 +32,7 @@ public class Ciclos : MonoBehaviour
         for (int i = 0; i < diasSemanas.Length; i++)
         {
             miArreglo[i] = i + 1;
-            //Debug.Log(diasSemanas[i]);
+            Debug.Log(diasSemanas[i]);
         }
         foreach (int i in miArreglo)
         {
